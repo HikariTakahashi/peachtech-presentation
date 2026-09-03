@@ -1,0 +1,9 @@
+{
+  "markdown.marp.html": "all",
+  "markdown.marp.themes": [
+    "./themes/peachtech-ui.css"
+  ],
+  "workbench.editorAssociations": {
+    "*.md": "default"
+  }
+}

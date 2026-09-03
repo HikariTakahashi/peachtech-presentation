@@ -1,0 +1,22 @@
+{
+  "name": "peachtech-marp-template",
+  "version": "1.0.0",
+  "description": "PeachTech向けのMarp技術発表テンプレート",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "prepdf": "node -e \"require('fs').mkdirSync('dist',{recursive:true})\"",
+    "pdf": "marp slides.md --pdf --allow-local-files -o dist/slides.pdf",
+    "prepptx": "node -e \"require('fs').mkdirSync('dist',{recursive:true})\"",
+    "pptx": "marp slides.md --pptx --allow-local-files -o dist/slides.pptx",
+    "prehtml": "node -e \"require('fs').mkdirSync('dist',{recursive:true})\"",
+    "html": "marp slides.md --html --allow-local-files -o dist/slides.html",
+    "export": "npm run pdf && npm run pptx && npm run html"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.0"
+  }
+}
