@@ -284,6 +284,12 @@ paginate: true
 - `image-center`: 画像を中央に配置
 - `code-focus`: コードを大きく表示
 - `compact`: 本文を少し小さく表示
+- `media-split`: 画像と説明を左右に配置（`reverse` を追加すると左右反転）
+- `stat-layout`: 大きな数値と測定条件を並べる
+- `process`: 4段階の処理フローを表示
+- `architecture`: システム構成を階層で表示
+- `code-compare`: 修正前後のコードを比較
+- `demo-layout`: デモ画面と注目点を並べる
 
 タイトルスライドでロゴとページ番号を隠す例（`skip` は使わない。番号は非表示でもページ数に含む）:
 
@@ -298,7 +304,7 @@ paginate: true
 
 - `template/basic.md`: 最小構成
 - `template/technical-talk.md`: 5分の技術発表構成
-- `template/layouts.md`: 通常、2カラム、画像、コード、比較、セクション区切り
+- `template/layouts.md`: 基本レイアウトと、画像＋説明、数値・成果、処理フロー、アーキテクチャ、コード比較、デモ画面
 
 使いたいファイルを `slides.md` にコピーして編集します。詳しくは `template/README.md` を参照してください。
 
