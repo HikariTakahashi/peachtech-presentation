@@ -341,3 +341,932 @@ section.section::after {
 .compact {
   font-size: 24px;
 }
+
+/* Reusable components for the layout samples. */
+section.layout {
+  font-size: 26px;
+}
+
+section.layout > h1 {
+  align-self: flex-start;
+  margin-bottom: 28px;
+}
+
+section.layout :where(h2, h3, p, ol, ul, figure, pre, table) {
+  margin: 0;
+}
+
+section.layout :where(h2, h3) + * {
+  margin-top: 8px;
+}
+
+section.layout .layout-grid,
+section.layout .layout-stack {
+  display: grid;
+  gap: 24px;
+}
+
+section.layout .layout-grid {
+  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+section.layout .layout-grid--wide-left {
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+}
+
+section.layout .layout-grid--wide-right {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+
+section.layout .layout-grid--three {
+  align-items: stretch;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+section.layout .layout-panel {
+  border: 2px solid var(--peach);
+  border-radius: 10px;
+  min-width: 0;
+  padding: 18px 22px;
+}
+
+section.layout .layout-panel--accent {
+  background: var(--peach);
+}
+
+section.layout .layout-label {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+section.layout .layout-note {
+  font-size: 21px;
+  margin-top: 16px;
+}
+
+section.layout .layout-arrow {
+  align-self: center;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Openers and emphasis. */
+section.layout-question,
+section.layout-quote,
+section.layout-metric {
+  justify-content: center;
+}
+
+section.layout-question,
+section.layout-metric {
+  align-items: center;
+  text-align: center;
+}
+
+section.layout-question > h1,
+section.layout-metric > h1 {
+  align-self: center;
+}
+
+section.layout-question > h1 {
+  border: 0;
+  font-size: 64px;
+  margin: 0 0 16px;
+  max-width: 1000px;
+  padding: 0;
+}
+
+section.layout .agenda-steps,
+section.layout .milestones {
+  display: grid;
+  gap: 20px;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  list-style: none;
+  padding: 0;
+}
+
+section.layout .agenda-steps {
+  margin-top: 36px;
+}
+
+section.layout .agenda-steps > li,
+section.layout .milestones > li {
+  margin: 0;
+}
+
+section.layout .agenda-steps > li {
+  border-top: 8px solid var(--peach);
+}
+
+section.layout .agenda-steps [aria-current] {
+  background: var(--peach);
+}
+
+section.layout .profile {
+  align-items: center;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 270px minmax(0, 1fr);
+}
+
+section.layout .profile img {
+  aspect-ratio: 1;
+  border: 4px solid var(--peach);
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+section.layout .profile h2,
+section.layout .term {
+  font-size: 48px;
+}
+
+section.layout .term {
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+section.layout .definition {
+  border-left: 4px solid var(--peach);
+  padding: 12px 0 12px 24px;
+}
+
+section.layout-quote blockquote {
+  margin: 0;
+}
+
+section.layout-quote blockquote p {
+  font-size: 48px;
+  line-height: 1.35;
+}
+
+section.layout-quote figcaption {
+  font-size: 22px;
+  margin: 18px 0 0 48px;
+}
+
+/* Process and architecture diagrams. */
+section.layout .layout-flow,
+section.layout .architecture,
+section.layout .entity-diagram {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+}
+
+section.layout .layout-flow {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  text-align: center;
+}
+
+section.layout .architecture {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 2.2fr) auto minmax(0, 1fr);
+  text-align: center;
+}
+
+section.layout .architecture .layout-panel,
+section.layout .layout-flow .layout-panel {
+  padding-inline: 14px;
+}
+
+section.layout .architecture-group {
+  border-style: dashed;
+}
+
+section.layout .architecture h2 {
+  font-size: 24px;
+}
+
+section.layout .architecture .layout-flow {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  margin-top: 14px;
+}
+
+section.layout .layer-stack {
+  display: grid;
+  gap: 14px;
+}
+
+section.layout .layer {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  padding: 0;
+}
+
+section.layout .layer > strong,
+section.layout .layer > span {
+  padding: 14px 20px;
+}
+
+section.layout .layer > strong {
+  background: var(--peach);
+  border-radius: 7px 0 0 7px;
+}
+
+section.layout .swimlane {
+  border: 2px solid var(--peach);
+  border-radius: 10px;
+}
+
+section.layout .swimlane-row {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 160px repeat(4, minmax(0, 1fr));
+  min-height: 118px;
+}
+
+section.layout .swimlane-row + .swimlane-row {
+  border-top: 2px solid var(--peach);
+}
+
+section.layout .swimlane-owner {
+  align-items: center;
+  align-self: stretch;
+  background: var(--peach);
+  display: flex;
+  justify-content: center;
+}
+
+section.layout .swimlane-task {
+  font-size: 22px;
+  grid-column: var(--step);
+  margin: 0 24px;
+  padding: 12px 8px;
+  position: relative;
+  text-align: center;
+}
+
+section.layout .swimlane-task > .layout-arrow {
+  font-size: 37px;
+  left: calc(100% + 4px);
+  line-height: 1;
+  position: absolute;
+  top: 20%;
+  width: 44px;
+}
+
+section.layout .swimlane-task > .swimlane-down {
+  top: calc(50% + 38px);
+}
+
+section.layout .swimlane-task > .swimlane-up {
+  top: calc(50% - 72px);
+}
+
+section.layout .sequence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto repeat(4, 66px);
+}
+
+section.layout .sequence-participant {
+  justify-self: center;
+  padding: 10px 24px;
+}
+
+section.layout .sequence-lifeline {
+  border-left: 2px dashed var(--peach);
+  grid-column: var(--participant);
+  grid-row: 2 / -1;
+  justify-self: center;
+}
+
+section.layout .sequence-message {
+  align-self: center;
+  border-bottom: 3px solid var(--black);
+  font-size: 20px;
+  grid-column: var(--participants);
+  grid-row: var(--step);
+  margin: 0 25%;
+  position: relative;
+  text-align: center;
+}
+
+section.layout .sequence-message::after,
+section.layout .sequence-return::before {
+  border: 8px solid transparent;
+  border-left-color: var(--black);
+  bottom: -9px;
+  content: '';
+  position: absolute;
+  right: -8px;
+}
+
+section.layout .sequence-return {
+  border-bottom-style: dashed;
+}
+
+section.layout .sequence-return::after {
+  display: none;
+}
+
+section.layout .sequence-return::before {
+  border-left-color: transparent;
+  border-right-color: var(--black);
+  left: -8px;
+  right: auto;
+}
+
+section.layout .decision-tree {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+section.layout .decision-branches {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-top: 36px;
+  position: relative;
+  width: 76%;
+}
+
+section.layout .decision-branches::before,
+section.layout .decision-branches::after {
+  background: var(--peach);
+  content: '';
+  position: absolute;
+}
+
+section.layout .decision-branches::before {
+  height: 2px;
+  left: calc(25% - 8px);
+  right: calc(25% - 8px);
+  top: 18px;
+}
+
+section.layout .decision-branches::after {
+  height: 18px;
+  left: 50%;
+  top: 0;
+  width: 2px;
+}
+
+section.layout .decision-branch {
+  position: relative;
+}
+
+section.layout .decision-branch::before {
+  background: var(--peach);
+  content: '';
+  height: 18px;
+  left: 50%;
+  position: absolute;
+  top: -18px;
+  width: 2px;
+}
+
+section.layout .decision-branch > .layout-label {
+  margin-bottom: 8px;
+}
+
+section.layout .state-flow {
+  grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr) 150px minmax(0, 1fr);
+  row-gap: 4px;
+}
+
+section.layout .state-edge {
+  font-size: 20px;
+}
+
+section.layout .state-edge > .layout-arrow {
+  display: block;
+  line-height: 1.1;
+}
+
+section.layout .state-failure {
+  grid-column: 3;
+}
+
+section.layout .state-failure > .layout-panel {
+  display: block;
+  margin-top: 6px;
+}
+
+section.layout .entity-diagram {
+  grid-template-columns: minmax(0, 1fr) 104px minmax(0, 1.1fr) 104px minmax(0, 1fr);
+}
+
+section.layout .entity-diagram h2 {
+  font-size: 26px;
+}
+
+section.layout .entity-fields {
+  font-size: 22px;
+  list-style: none;
+  padding: 0;
+}
+
+section.layout .entity-relation {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  gap: 6px;
+}
+
+section.layout .entity-relation > span {
+  border-top: 2px solid var(--black);
+  flex: 1;
+}
+
+/* Code, images and comparisons. */
+section.layout .annotated-figure {
+  align-items: center;
+}
+
+section.layout .annotated-image {
+  position: relative;
+}
+
+section.layout .annotated-image img {
+  border: 2px solid var(--peach);
+  border-radius: 8px;
+  display: block;
+  max-height: none;
+  width: 100%;
+}
+
+section.layout .annotations {
+  display: grid;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+section.layout .annotations > li {
+  align-items: start;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  margin: 0;
+}
+
+section.layout .annotation-number {
+  align-items: center;
+  background: var(--peach);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  display: inline-flex;
+  font-size: 20px;
+  font-weight: 700;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+section.layout .annotated-image > .annotation-number {
+  left: var(--x);
+  position: absolute;
+  top: var(--y);
+  transform: translate(-50%, -50%);
+}
+
+section.layout .code-notes li {
+  font-size: 23px;
+}
+
+section.layout .code-listing {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+section.layout .code-line-numbers {
+  font-size: 0.72em;
+  line-height: 1.35;
+  padding-top: calc(0.5em + 4px);
+  text-align: right;
+}
+
+section.layout .code-output {
+  gap: 14px;
+}
+
+section.layout .code-output .layout-label {
+  margin-bottom: 6px;
+}
+
+section.layout .directory-notes {
+  margin: 0;
+}
+
+section.layout .directory-notes > dt {
+  font-weight: 700;
+}
+
+section.layout .directory-notes > dd {
+  margin: 2px 0 12px;
+}
+
+section.layout .quadrant {
+  display: grid;
+  gap: 8px 14px;
+  grid-template-columns: 48px minmax(0, 1fr);
+  text-align: center;
+}
+
+section.layout .quadrant-axis-y,
+section.layout .quadrant-axis-x {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.layout .quadrant-axis-y {
+  align-items: center;
+  flex-direction: column;
+}
+
+section.layout .quadrant-axis-x {
+  grid-column: 2;
+}
+
+section.layout .quadrant-cells {
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+section.layout .quadrant-cell {
+  border: 1px solid var(--peach);
+  display: grid;
+  min-height: 102px;
+  padding: 10px 16px;
+  place-content: center;
+}
+
+section.layout .funnel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+section.layout .funnel > li {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin: 0;
+  padding-block: 10px;
+  width: var(--width);
+}
+
+section.layout .funnel strong {
+  font-size: 36px;
+}
+
+/* Metrics and editable chart primitives. */
+section.layout .metric-value {
+  display: block;
+  font-size: 112px;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+}
+
+section.layout .metric-value small {
+  font-size: 0.42em;
+  letter-spacing: 0;
+}
+
+section.layout .metric-primary {
+  align-content: center;
+  min-height: 258px;
+  padding: 24px;
+}
+
+section.layout .metric-secondary strong {
+  display: block;
+  font-size: 42px;
+  line-height: 1.12;
+}
+
+section.layout .bar-chart,
+section.layout .stacked-chart {
+  display: grid;
+  gap: 15px;
+}
+
+section.layout .bar-row,
+section.layout .stacked-row {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 190px minmax(0, 1fr) 84px;
+}
+
+section.layout .bar-track {
+  background: linear-gradient(to right, var(--peach) 1px, transparent 1px) left / 25% 100%;
+  border-right: 1px solid var(--peach);
+  height: 36px;
+}
+
+section.layout .bar-fill {
+  background: var(--peach);
+  display: block;
+  height: 100%;
+  width: var(--value);
+}
+
+section.layout .bar-axis {
+  display: flex;
+  font-size: 18px;
+  grid-column: 2;
+  justify-content: space-between;
+}
+
+section.layout .layout-grid .bar-row {
+  grid-template-columns: 112px minmax(0, 1fr) 66px;
+}
+
+section.layout .chart-unit {
+  font-size: 20px;
+  padding-bottom: 8px;
+}
+
+section.layout .trend-chart {
+  display: grid;
+  gap: 10px 18px;
+  grid-template-columns: 48px minmax(0, 1fr);
+  padding-right: 40px;
+}
+
+section.layout .trend-y {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  justify-content: space-between;
+  line-height: 1;
+  text-align: right;
+}
+
+section.layout .trend-plot {
+  background: linear-gradient(to bottom, var(--peach) 1px, transparent 1px) top / 100% 25%;
+  border-bottom: 2px solid var(--black);
+  border-left: 2px solid var(--black);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: 210px;
+  position: relative;
+}
+
+section.layout .trend-segment {
+  background: var(--black);
+  clip-path: polygon(
+    0 calc(var(--from) - 2px), 100% calc(var(--to) - 2px),
+    100% calc(var(--to) + 2px), 0 calc(var(--from) + 2px)
+  );
+}
+
+section.layout .trend-point {
+  background: var(--peach);
+  border: 3px solid var(--black);
+  border-radius: 50%;
+  height: 16px;
+  left: var(--x);
+  position: absolute;
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  width: 16px;
+}
+
+section.layout .trend-point > strong {
+  background: var(--white);
+  font-size: 20px;
+  left: 10px;
+  line-height: 1.1;
+  padding: 2px 4px;
+  position: absolute;
+  top: -19px;
+  white-space: nowrap;
+}
+
+section.layout .trend-event {
+  border-left: 2px dashed var(--black);
+  bottom: 0;
+  left: var(--x);
+  position: absolute;
+  top: 0;
+}
+
+section.layout .trend-event > span {
+  background: var(--peach);
+  font-size: 18px;
+  left: 8px;
+  padding: 3px 8px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+section.layout .trend-x {
+  display: flex;
+  font-size: 18px;
+  grid-column: 2;
+  justify-content: space-between;
+}
+
+section.layout .stacked-row {
+  grid-template-columns: 130px minmax(0, 1fr);
+}
+
+section.layout .stacked-bar {
+  border: 2px solid var(--peach);
+  display: flex;
+}
+
+section.layout .stacked-bar > span {
+  flex: 0 0 var(--share);
+  font-size: 21px;
+  font-weight: 700;
+  padding-block: 11px;
+  text-align: center;
+}
+
+section.layout .stacked-bar > span + span {
+  border-left: 2px solid var(--peach);
+}
+
+section.layout .chart-key--solid {
+  background: var(--peach);
+}
+
+section.layout .chart-key--striped {
+  background: repeating-linear-gradient(135deg, var(--white) 0 6px, var(--peach) 6px 9px);
+}
+
+section.layout .chart-key--outline {
+  background: var(--white);
+}
+
+section.layout .chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  gap: 18px;
+  list-style: none;
+  margin-top: 22px;
+  padding: 0;
+}
+
+section.layout .chart-legend > li {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}
+
+section.layout .chart-swatch {
+  border: 2px solid var(--peach);
+  height: 22px;
+  width: 30px;
+}
+
+section.layout .dot-chart {
+  padding-inline: 12px;
+}
+
+section.layout .dot-plot {
+  background: linear-gradient(to right, var(--peach) 1px, transparent 1px) left / 25% 100%;
+  border-bottom: 2px solid var(--black);
+  border-right: 1px solid var(--peach);
+  height: 168px;
+  position: relative;
+}
+
+section.layout .dot-point {
+  background: var(--peach);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  bottom: var(--row, 22px);
+  height: 17px;
+  left: var(--value);
+  position: absolute;
+  transform: translateX(-50%);
+  width: 17px;
+}
+
+section.layout .dot-outlier {
+  background: var(--black);
+}
+
+section.layout .dot-outlier > strong {
+  bottom: 22px;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+}
+
+section.layout .dot-axis {
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+section.layout .test-heatmap {
+  display: table;
+  table-layout: fixed;
+}
+
+section.layout .test-heatmap th {
+  background: var(--white);
+}
+
+section.layout .test-heatmap th:first-child {
+  width: 40%;
+}
+
+section.layout .test-heatmap td {
+  text-align: center;
+}
+
+section.layout .test-heatmap .test-pass {
+  background: var(--peach);
+}
+
+section.layout .test-heatmap .test-fail {
+  background: repeating-linear-gradient(135deg, var(--white) 0 6px, var(--peach) 6px 9px);
+  font-weight: 700;
+}
+
+/* Timelines, FAQs and resource links. */
+section.layout .milestones {
+  gap: 0;
+  margin-top: 42px;
+}
+
+section.layout .milestones > li {
+  border-top: 4px solid var(--peach);
+  padding: 26px 12px 0;
+  position: relative;
+}
+
+section.layout .milestones > li::before {
+  background: var(--peach);
+  border: 3px solid var(--black);
+  border-radius: 50%;
+  content: '';
+  height: 20px;
+  left: 12px;
+  position: absolute;
+  top: -12px;
+  width: 20px;
+}
+
+section.layout .milestones time {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+section.layout .milestones p {
+  font-size: 22px;
+}
+
+section.layout .faq {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+section.layout .faq dt {
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+section.layout .faq dd {
+  font-size: 24px;
+  margin: 6px 0 0;
+}
+
+section.layout .resource-links {
+  align-items: center;
+}
+
+section.layout .resource-qr {
+  justify-self: center;
+  text-align: center;
+}
+
+section.layout .resource-qr img {
+  display: block;
+  height: 220px;
+  width: 220px;
+}
+
+section.layout .resource-qr figcaption {
+  font-size: 20px;
+}

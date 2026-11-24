@@ -298,9 +298,9 @@ paginate: true
 
 - `template/basic.md`: 最小構成
 - `template/technical-talk.md`: 5分の技術発表構成
-- `template/layouts.md`: 通常、2カラム、画像、コード、比較、セクション区切り
+- [`template/layouts.md`](template/layouts.md): 基本レイアウト、設計図、コード解説、グラフなど38種類
 
-使いたいファイルを `slides.md` にコピーして編集します。詳しくは `template/README.md` を参照してください。
+発表全体の雛形は `slides.md` にコピーして編集します。レイアウトは必要なスライドを1枚ずつコピーして使えます。手順とレイアウトの一覧は [テンプレート集](template/README.md) を参照してください。
 
 ## AIで初稿を作る
 
